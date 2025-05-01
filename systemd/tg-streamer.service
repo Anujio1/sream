@@ -1,0 +1,14 @@
+[Unit]
+Description=Gunicorn instance to serve tg_streamer
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/tg_streamer
+Environment="PATH=/opt/tg_streamer/venv/bin"
+EnvironmentFile=/opt/tg_streamer/.env
+ExecStart=/opt/tg_streamer/venv/bin/gunicorn --workers 4 --worker-class gevent --bind 0.0.0.0:5000 app.main:app
+
+[Install]
+WantedBy=multi-user.target

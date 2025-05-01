@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Telegram Video Streamer</title>
+    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet">
+</head>
+<body>
+    <video
+        id="tg-video"
+        class="video-js vjs-fluid vjs-big-play-centered"
+        controls
+        preload="auto"
+        data-setup='{}'>
+        <source src="/stream/{{ file_id }}" type="video/mp4">
+    </video>
+    <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+</body>
+</html>
